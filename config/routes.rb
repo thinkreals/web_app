@@ -1,5 +1,5 @@
 WebApp::Application.routes.draw do
-  get "welcome/index"
+  devise_for :users, :controllers => { :sessions => "user/sessions" }
 
   match 'dev' => 'dev#index', :via => [:get]
 

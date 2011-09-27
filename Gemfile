@@ -16,7 +16,9 @@ group :assets do
   gem 'uglifier'
 end
 
-gem 'jquery-rails'
+gem 'jquery-rails'       
+
+gem 'devise'
 
 # Use unicorn as the web server
 # gem 'unicorn'
@@ -25,7 +27,7 @@ gem 'jquery-rails'
 # gem 'capistrano'
 
 # To use debugger
-# gem 'ruby-debug19', :require => 'ruby-debug'
+gem 'ruby-debug19', :require => 'ruby-debug'
 
 group :test do
   # Pretty printed test output
