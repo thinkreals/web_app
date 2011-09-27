@@ -28,5 +28,5 @@ thinkreals web app
 4. seed
 5. db/ 아래 마이그레이션들 필요 컬럼 추가/삭제
 7. 컬럼 추가 삭제한것들 readable_object에서 확인 잘하기.
-
+8. db/migrate/20110927133042_devise_create_admin_users.rb 파일에 관리자 계정, 비밀번호 설정
  
