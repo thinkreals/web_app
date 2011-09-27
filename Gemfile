@@ -19,6 +19,8 @@ end
 gem 'jquery-rails'       
 
 gem 'devise'
+gem 'inherited_resources'
+gem 'kaminari'
 
 # Use unicorn as the web server
 # gem 'unicorn'

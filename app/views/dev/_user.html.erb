@@ -27,7 +27,16 @@
 			url: "/users.json",
 			data: {},
 			page: true,
-			note: "users"
+			note: ""
+		}
+	%> 
+	
+	<%= render partial: 'get',
+		locals: {
+			url: "/users/1.json",
+			data: {},
+			page: false,
+			note: ""
 		}
 	%>
 </table>

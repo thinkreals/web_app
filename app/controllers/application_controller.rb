@@ -1,5 +1,17 @@
 class ApplicationController < ActionController::Base
-  # protect_from_forgery
+  # protect_from_forgery  
+  
+  # def render_resource_json(resource, hash = {})
+  #   name = resource.class.name.underscore
+  #   hash[:current_user] = current_user
+  #   
+  #   render json: {   
+  #     status_code: 'success',
+  #     message: hash[:message] || 'Success.',                    
+  #     name => resource.readable_object(params[:v], hash)
+  #   }
+  #   
+  # end                  
   
   def render_success_json(msg = nil)
     render json: {
