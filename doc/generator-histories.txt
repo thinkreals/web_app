@@ -1,0 +1,4 @@
+
+rails g scaffold property key:string value:string use_client:boolean
+
+
