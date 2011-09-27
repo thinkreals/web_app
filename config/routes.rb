@@ -1,4 +1,6 @@
 WebApp::Application.routes.draw do
+  match 'dev' => 'dev#index', :via => [:get]
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

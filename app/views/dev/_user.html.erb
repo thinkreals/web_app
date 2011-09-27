@@ -1,0 +1,33 @@
+<h2>User</h2>     
+<table>           
+	<%= render partial: 'table_head' %>
+	
+	<%= render partial: 'post', 
+		locals: {
+			url: "/users/sign_in.json",
+			data: { 'user[email]' => '', 'user[password]' => '' },
+			file: {},
+			note: "login"
+		}          
+	%>              
+
+              
+	<%= render partial: 'post', 
+		locals: {
+			url: "/users/sign_out.json",
+			data: { '_method'	=> 'delete' },
+			file: {},
+			note: "logout"
+		}          
+	%>
+
+                    
+	<%= render partial: 'get',
+		locals: {
+			url: "/users.json",
+			data: {},
+			page: true,
+			note: "users"
+		}
+	%>
+</table>
