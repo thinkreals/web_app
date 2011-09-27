@@ -1,5 +1,5 @@
 WebApp::Application.routes.draw do
-  devise_for :users, :controllers => { :sessions => "user/sessions" } 
+  devise_for :users, :controllers => { :sessions => "user/sessions", :registrations => "user/registrations" } 
   
   # The priority is based upon order of creation:
   # first created -> highest priority.
