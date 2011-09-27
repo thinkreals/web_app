@@ -1,4 +1,6 @@
 
 rails g scaffold property key:string value:string use_client:boolean
-
+rails g controller welcome index
+rails g active_admin:install
+rails g active_admin:resource property
 
