@@ -1,0 +1,51 @@
+<h2>User</h2>     
+<table>           
+	<%= render partial: 'table_head' %>
+	
+	<%= render partial: 'post', 
+		locals: {
+			url: "/users/sign_in.json",
+			data: { 'user[email]' => 'admin@web_app.com', 'user[password]' => '12345678' },
+			file: {},
+			note: "login"
+		}          
+	%>              
+
+              
+	<%= render partial: 'post', 
+		locals: {
+			url: "/users/sign_out.json",
+			data: { '_method'	=> 'delete' },
+			file: {},
+			note: "logout"
+		}          
+	%> 
+	
+	<%= render partial: 'post', 
+		locals: {
+			url: "/users.json",
+			data: { 'user[email]' => 'user@web_app.com', 'user[password]' => '12345678', 'user[password_confirmation]' => '12345678' },
+			file: {},
+			note: "join"
+		}          
+	%>
+
+                    
+	<%= render partial: 'get',
+		locals: {
+			url: "/users.json",
+			data: {},
+			page: true,
+			note: ""
+		}
+	%> 
+	
+	<%= render partial: 'get',
+		locals: {
+			url: "/users/1.json",
+			data: {},
+			page: false,
+			note: ""
+		}
+	%>
+</table>

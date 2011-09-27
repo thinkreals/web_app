@@ -1,0 +1,29 @@
+<% 
+	if page == true
+		data['page'] = 1
+		data['per_page'] = 25
+	end  
+	
+	data['v'] = 1         
+%>
+
+<%    
+	data_string = ""
+
+	p = []
+	data.each_pair do |k, v|
+		p << "#{k}=#{v}" if v.present?
+	end                             
+
+	data_string = "?" + p.join("&") if p.any?
+%>
+
+<tr>
+	<td><%= url %></td>
+	<td>GET</td>
+	<td><%=raw data.keys.join("<br />") %></td>
+	<td>
+		<%= link_to 'click', url + data_string, target: '_blank' %> 
+	</td>
+	<td><%= note %></td>
+</tr>

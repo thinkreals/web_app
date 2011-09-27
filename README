@@ -19,3 +19,14 @@ thinkreals web app
 * 이거 완성되면 포크 떠서 town 포함하여 lbs_app만들예정. 
 
  
+
+* 주의사항
+
+1. find & replace 로 web_app, WebApp 바꾸기
+2. config.yml
+3. database.yml
+4. seed
+5. db/ 아래 마이그레이션들 필요 컬럼 추가/삭제
+7. 컬럼 추가 삭제한것들 readable_object에서 확인 잘하기.
+
+ 

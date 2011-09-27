@@ -1,0 +1,27 @@
+<% 
+	data['v'] = 1
+%>
+
+
+<tr>
+	<td><%= url %></td>
+	<td>POST</td>
+	<td><%=raw data.keys.join("<br />") %></td>
+	<td>                    
+		<% if url.match(/\[id\]/) %>
+			id:<input name="id" type="input" value="<%= params[:id]%>"/>       
+		<% end  %>
+		
+		<%= form_tag(url, :method => :post, :multipart => true, :target => '_blank') do %>
+			<% data.each_pair do |k, v| %>
+				<%= k %>:<%= text_field_tag(k, v) %><br />
+			<% end %>
+			<% file.each_pair do |k, v| %>
+				<%= k %>:<%= file_field_tag(k) %><br />
+			<% end %>
+			<%= submit_tag("Submit") %>
+		<% end %>
+		
+	</td>
+	<td><%= note %></td>
+</tr>

@@ -1,5 +1,5 @@
 WebApp::Application.routes.draw do
-  get "welcome/index"
+  devise_for :users, :controllers => { :sessions => "user/sessions", :registrations => "user/registrations" } 
 
   resources :properties
 
@@ -15,7 +15,8 @@ WebApp::Application.routes.draw do
   # This route can be invoked with purchase_url(:id => product.id)
 
   # Sample resource route (maps HTTP verbs to controller actions automatically):
-  #   resources :products
+  #   resources :products 
+  resources :users
 
   # Sample resource route with options:
   #   resources :products do
@@ -58,5 +59,6 @@ WebApp::Application.routes.draw do
 
   # This is a legacy wild controller route that's not recommended for RESTful applications.
   # Note: This route will make all actions in every controller accessible via GET requests.
-  # match ':controller(/:action(/:id(.:format)))'
+  # match ':controller(/:action(/:id(.:format)))' 
+  match 'dev' => 'dev#index', :via => [:get]
 end

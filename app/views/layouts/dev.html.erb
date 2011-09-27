@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="utf-8" />
+		<title>APIs</title>
+		<%= stylesheet_link_tag    "dev" %>
+		<%= javascript_include_tag "dev" %>
+		<%= csrf_meta_tags %>
+		<%= yield :head %>
+	</head>
+	<body>
+		<%= yield %>
+	</body>
+</html>

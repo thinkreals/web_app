@@ -7,6 +7,17 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+	<p class="notice"><%= notice %></p>
+	<p class="alert"><%= alert %></p>
+	
+	<div>
+		<% if user_signed_in? %>
+		  <%= current_user.email %> 님 |
+		  <%= link_to 'Sign Out', destroy_user_session_path, method: :delete %>
+		<% else %>
+			<%= link_to 'Sign in', new_user_session_path %>
+		<% end %>
+	</div>
 
 <%= yield %>
 
