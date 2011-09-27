@@ -26,9 +26,6 @@ ActiveRecord::Schema.define(:version => 20110927060725) do
     t.string   "last_sign_in_ip"
     t.string   "password_salt"
     t.string   "authentication_token"
-    t.string   "nickname",                                              :null => false
-    t.string   "bio"
-    t.string   "homepage"
     t.string   "image_file_name"
     t.string   "image_content_type"
     t.integer  "image_file_size"
@@ -40,7 +37,6 @@ ActiveRecord::Schema.define(:version => 20110927060725) do
 
   add_index "users", ["authentication_token"], :name => "index_users_on_authentication_token", :unique => true
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
-  add_index "users", ["nickname"], :name => "index_users_on_nickname"
   add_index "users", ["reset_password_token"], :name => "index_users_on_reset_password_token", :unique => true
 
 end

@@ -12,7 +12,7 @@
 	
 	<div>
 		<% if user_signed_in? %>
-		  <%= current_user.nickname %> 님 |
+		  <%= current_user.email %> 님 |
 		  <%= link_to 'Sign Out', destroy_user_session_path, method: :delete %>
 		<% else %>
 			<%= link_to 'Sign in', new_user_session_path %>
