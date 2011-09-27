@@ -3,6 +3,7 @@ class User < ActiveRecord::Base
   # :token_authenticatable, :encryptable, :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable, :token_authenticatable
+  before_save :ensure_authentication_token                
 
   # Setup accessible (or protected) attributes for your model
   # attr_accessible :email, :password, :password_confirmation, :remember_me
@@ -17,10 +18,8 @@ class User < ActiveRecord::Base
          id: id,            
          email: email,
          authentication_token: authentication_token,
-         nickname: nickname,
-         bio: bio,
-         homepage: homepage,  
-         
+         created_at: created_at.to_s(:normal_datetime),
+         updated_at: updated_at.to_s(:normal_datetime)
        }
     end
     

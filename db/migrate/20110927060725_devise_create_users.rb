@@ -8,11 +8,7 @@ class DeviseCreateUsers < ActiveRecord::Migration
       t.encryptable
       t.token_authenticatable
       # t.confirmable
-      # t.lockable :lock_strategy => :failed_attempts, :unlock_strategy => :both
-
-      t.string :nickname, :null => false, :length => 16   
-      t.string :bio
-      t.string :homepage
+      # t.lockable :lock_strategy => :failed_attempts, :unlock_strategy => :both 
       
       #paperclip
       t.string    :image_file_name
@@ -29,8 +25,6 @@ class DeviseCreateUsers < ActiveRecord::Migration
     add_index :users, :authentication_token, :unique => true
     # add_index :users, :confirmation_token,   :unique => true
     # add_index :users, :unlock_token,         :unique => true
-    
-    add_index :users, :nickname
   end
 
   def self.down
