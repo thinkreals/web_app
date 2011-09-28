@@ -1,0 +1,40 @@
+ko:
+  errors:
+    messages:
+      not_found: "not found"
+      already_confirmed: "was already confirmed"
+      not_locked: "was not locked"
+
+  devise:
+    failure:
+      unauthenticated: '로그인이 필요합니다.'
+      unconfirmed: '승인이 필요합니다.'
+      locked: '계정이 잠겨있습니다.'
+      invalid: '이메일 혹은 비밀번호가 잘못 입력되었습니다.'
+      invalid_token: 'Invalid authentication token.'
+      timeout: '로그인 정보가 만료되었습니다.'
+      inactive: '계정정보가 활성화 되지 않았습니다.'
+      already_authenticated: '이미 로그인 된 상태입니다.'
+    sessions:
+      signed_in: '로그인 되었습니다.'
+      signed_out: '로그아웃 되었습니다.'
+    passwords:
+      send_instructions: 'You will receive an email with instructions about how to reset your password in a few minutes.'
+      updated: 'Your password was changed successfully. You are now signed in.'
+    confirmations:
+      send_instructions: 'You will receive an email with instructions about how to confirm your account in a few minutes.'
+      confirmed: 'Your account was successfully confirmed. You are now signed in.'
+    registrations:
+      signed_up: '회원가입이 완료되었습니다.'
+      updated: '회원정보가 수정되었습니다.'
+      destroyed: '회원님의 계정정보가 삭제되었습니다.'
+    unlocks:
+      send_instructions: 'You will receive an email with instructions about how to unlock your account in a few minutes.'
+      unlocked: 'Your account was successfully unlocked. You are now signed in.'
+    mailer:
+      confirmation_instructions:
+        subject: 'Confirmation instructions'
+      reset_password_instructions:
+        subject: '[비바히어] 비밀번호 재설정 안내'
+      unlock_instructions:
+        subject: 'Unlock Instructions'
