@@ -50,7 +50,7 @@ ActiveRecord::Schema.define(:version => 20110928051147) do
     t.string   "feedback_type"
     t.integer  "user_id"
     t.string   "email"
-    t.string   "content"
+    t.text     "content"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

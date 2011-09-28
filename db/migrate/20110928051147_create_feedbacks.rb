@@ -4,7 +4,7 @@ class CreateFeedbacks < ActiveRecord::Migration
       t.string :feedback_type
       t.integer :user_id
       t.string :email
-      t.string :content
+      t.text :content
 
       t.timestamps
     end

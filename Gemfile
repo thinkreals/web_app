@@ -24,6 +24,7 @@ gem 'jquery-rails'
 gem 'devise'
 gem 'inherited_resources'
 gem 'kaminari'
+gem 'formtastic'
 
 # Use unicorn as the web server
 # gem 'unicorn'
