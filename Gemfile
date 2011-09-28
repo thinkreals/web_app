@@ -19,7 +19,7 @@ group :assets do
   gem 'uglifier'
 end
 
-gem 'jquery-rails'       
+gem 'jquery-rails'
 
 gem 'devise'
 gem 'inherited_resources'
@@ -34,6 +34,7 @@ gem 'formtastic'
 
 # To use debugger
 gem 'ruby-debug19', :require => 'ruby-debug'
+gem 'active_reload'
 
 group :test do
   # Pretty printed test output
