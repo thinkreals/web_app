@@ -9,6 +9,7 @@ gem 'mysql2'
 
 gem 'activeadmin'
 
+gem 'memcache-client'
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -23,6 +24,7 @@ gem 'jquery-rails'
 gem 'devise'
 gem 'inherited_resources'
 gem 'kaminari'
+gem 'formtastic'
 
 # Use unicorn as the web server
 # gem 'unicorn'

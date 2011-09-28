@@ -1,0 +1,26 @@
+common: &common
+  admin_email: 'contact@webapp.com'
+  email_sender: 'contact@webapp.com'
+  secret_key: 'secret_key'
+  twitter_consumer_key: '15odGgsghpeYAUa2KPcxSw'
+  twitter_consumer_secret: 'VcRwJB2hC61PyiLcmHgTlLsdQU0bHq2NIMCptWMWHo'
+  facebook_app_id: '258229060874868'
+  facebook_secret: 'c59251dbf7877678299909c459af8458'
+
+development:
+  domain: 'dev.webapp.com'
+  host: 'http://dev.webapp.com'
+  image_host: 'http://dev.webapp.com'
+  exception_mail_recipients: ['', '']·
+  memcached_host: 'localhost:11211'
+  <<: *common
+
+production:
+  domain: 'webapp.com'
+  host: 'http://webapp.com'
+  image_host: 'http://webapp.com'
+  exception_mail_recipients: ['', '']
+  memcached_host: 'localhost:11211'
+  <<: *common
+
+

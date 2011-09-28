@@ -4,3 +4,6 @@ rails g controller welcome index
 rails g active_admin:install
 rails g active_admin:resource property
 
+rails g scaffold feedback feedback_type:string user_id:integer email:string content:string
+rails g active_admin:resource feedback
+

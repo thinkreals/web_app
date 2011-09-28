@@ -11,11 +11,11 @@ class User < ActiveRecord::Base
 
   def readable_object(version, hash = nil)
     ret = {}
-    
+
     case version.to_i
     when 1
-       ret = { 
-         id: id,            
+       ret = {
+         id: id,
          email: email,
          authentication_token: authentication_token,
          nickname: nickname,
@@ -23,9 +23,7 @@ class User < ActiveRecord::Base
          updated_at: updated_at.to_s(:normal_datetime)
        }
     end
-    
-    ret
-  end    
-  
 
+    ret
+  end
 end

@@ -27,4 +27,8 @@ WebApp::Application.configure do
 
   # Expands the lines which load the assets
   config.assets.debug = true
+
+  
+  config.cache_store = :mem_cache_store, CONFIG['memcached_host']
+
 end

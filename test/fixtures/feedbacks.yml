@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/Fixtures.html
+
+one:
+  feedback_type: MyString
+  user_id: 1
+  email: MyString
+  content: MyString
+
+two:
+  feedback_type: MyString
+  user_id: 1
+  email: MyString
+  content: MyString
