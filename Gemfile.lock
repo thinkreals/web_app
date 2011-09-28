@@ -79,6 +79,7 @@ GEM
       i18n (>= 0.4.0)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
+    memcache-client (1.8.5)
     meta_search (1.1.1)
       actionpack (~> 3.1.0)
       activerecord (~> 3.1.0)
@@ -163,6 +164,7 @@ DEPENDENCIES
   inherited_resources
   jquery-rails
   kaminari
+  memcache-client
   mysql2
   rails (= 3.1.0)
   ruby-debug19
