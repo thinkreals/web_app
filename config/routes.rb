@@ -20,6 +20,7 @@ WebApp::Application.routes.draw do
   #   resources :products 
   resources :users do
     member do
+      get 'password'
       put 'password'
     end
   end

@@ -1,0 +1,10 @@
+<%= form_for(resource, :url => {:action => :update}, :html => { :method => :put }) do |f| %>
+  <%= devise_error_messages! %>
+
+  
+  <div><%= f.label :nickname %><br />
+  <%= f.text_field :nickname %></div>
+
+  <div><%= f.submit "Update" %></div>
+<% end %>
+
