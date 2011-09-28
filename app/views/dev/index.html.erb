@@ -1,3 +1,16 @@
+<% content_for :head do %>
+<script type="text/javascript">
+  $(document).ready(function () {         
+    $("form").submit(function() {   
+      var val = $(this).parent().find('input[name=id]').val();
+      var action_url = $(this).attr('action');
+      var replaced_action_url = action_url.replace(/\[id\]/, val);
+      $(this).attr('action', replaced_action_url);
+    });
+  });
+</script>       
+<% end %>
+
 current_user : <%= current_user.email if user_signed_in? %>
 
 <%= render partial: 'user' %>     

@@ -18,6 +18,7 @@ class User < ActiveRecord::Base
          id: id,            
          email: email,
          authentication_token: authentication_token,
+         nickname: nickname,
          created_at: created_at.to_s(:normal_datetime),
          updated_at: updated_at.to_s(:normal_datetime)
        }

@@ -8,7 +8,7 @@ class ApplicationController < ActionController::Base
     render json: {   
       status_code: 'success',
       message: hash[:message] || 'Success.',                    
-      name => resource.readable_object(params[:v], hash)
+      name => resource.readable_object(params[:v] || 1, hash)
     }
   end                  
   
@@ -22,7 +22,7 @@ class ApplicationController < ActionController::Base
       page: params[:page],
       per_page: params[:per_page],
       total_count: collection.total_count,
-      name => collection.map{|resource| resource.readable_object(params[:v], hash) }
+      name => collection.map{|resource| resource.readable_object(params[:v] || 1, hash) }
     }
     
   end

@@ -9,7 +9,7 @@
 	<td><%=raw data.keys.join("<br />") %></td>
 	<td>                    
 		<% if url.match(/\[id\]/) %>
-			id:<input name="id" type="input" value="<%= params[:id]%>"/>       
+			id:<input name="id" type="input" value="<%= params[:id] || 1 %>"/>       
 		<% end  %>
 		
 		<%= form_tag(url, :method => :post, :multipart => true, :target => '_blank') do %>

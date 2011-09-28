@@ -24,9 +24,18 @@
 	<%= render partial: 'post', 
 		locals: {
 			url: "/users.json",
-			data: { 'user[email]' => 'user@web_app.com', 'user[password]' => '12345678', 'user[password_confirmation]' => '12345678' },
+			data: { 'user[email]' => 'user@web_app.com', 'user[password]' => '12345678', 'user[password_confirmation]' => '12345678', 'user[nickname]' => 'user' },
 			file: {},
 			note: "join"
+		}          
+	%>  
+	
+	<%= render partial: 'post', 
+		locals: {
+			url: "/users/[id].json",
+			data: { '_method' => 'put', 'user[nickname]' => 'user' },
+			file: {},
+			note: "edit user"
 		}          
 	%>
 

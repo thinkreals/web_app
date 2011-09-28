@@ -14,6 +14,13 @@ class ResourcesController < InheritedResources::Base
       format.json { render_resource_json resource }
     end
   end
+  
+  def update
+    update! do |format|
+      format.html
+      format.json { render_resource_json resource, :message => "Successfully updated." }  
+    end
+  end
 
   protected
   def collection

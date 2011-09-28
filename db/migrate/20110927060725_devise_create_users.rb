@@ -10,6 +10,8 @@ class DeviseCreateUsers < ActiveRecord::Migration
       # t.confirmable
       # t.lockable :lock_strategy => :failed_attempts, :unlock_strategy => :both 
       
+      t.string :nickname
+      
       #paperclip
       t.string    :image_file_name
       t.string    :image_content_type
