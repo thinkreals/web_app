@@ -25,6 +25,7 @@ gem 'devise'
 gem 'inherited_resources'
 gem 'kaminari'
 gem 'formtastic'
+gem 'cancan'
 
 # Use unicorn as the web server
 # gem 'unicorn'

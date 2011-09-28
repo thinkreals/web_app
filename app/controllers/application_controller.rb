@@ -1,5 +1,12 @@
 class ApplicationController < ActionController::Base
-  # protect_from_forgery  
+  # protect_from_forgery     
+
+  rescue_from CanCan::AccessDenied do |exception|
+    respond_to do |format|
+      format.html { redirect_to new_user_session_path, :alert => 'Please sign in.' }
+      format.json { render_require_auth_json }
+    end
+  end
   
   def render_resource_json(resource, hash = {})
     name = resource.class.name.underscore
