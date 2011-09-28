@@ -1,0 +1,13 @@
+<h2>Etc</h2>     
+<table>           
+	<%= render partial: 'table_head' %>
+	
+	<%= render partial: 'get',
+		locals: {
+			url: "/properties.json",
+			data: {},
+			page: true,
+			note: ""
+		}
+	%>
+</table>
