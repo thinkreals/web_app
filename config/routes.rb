@@ -3,11 +3,7 @@ WebApp::Application.routes.draw do
   ActiveAdmin.routes(self)
 
   devise_for :admin_users, ActiveAdmin::Devise.config
-
   devise_for :users, :controllers => { :sessions => "user/sessions", :registrations => "user/registrations" } 
-
-  resources :properties
-  resources :feedbacks
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
@@ -22,7 +18,13 @@ WebApp::Application.routes.draw do
 
   # Sample resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products 
-  resources :users
+  resources :users do
+    member do
+      put 'password'
+    end
+  end
+  resources :properties
+  resources :feedbacks
 
   # Sample resource route with options:
   #   resources :products do

@@ -37,8 +37,16 @@
 			file: {},
 			note: "edit user"
 		}          
+	%>   
+	
+	<%= render partial: 'post', 
+		locals: {
+			url: "/users/[id]/password.json",
+			data: { '_method' => 'put', 'user[current_password]' => '', 'user[password]' => '', 'user[password_confirmation]' => '' },
+			file: {},
+			note: "edit password"
+		}          
 	%>
-
                     
 	<%= render partial: 'get',
 		locals: {

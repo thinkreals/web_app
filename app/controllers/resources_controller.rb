@@ -15,10 +15,13 @@ class ResourcesController < InheritedResources::Base
     end
   end
   
-  def update
-    update! do |format|
-      format.html
-      format.json { render_resource_json resource, :message => "Successfully updated." }  
+  def update   
+    update! do |success, failure|    
+      success.html
+      success.json { render_resource_json resource, :message => "Successfully updated." }  
+      
+      failure.html
+      failure.json { render_fail_json resource.errors.messages }
     end
   end
 
