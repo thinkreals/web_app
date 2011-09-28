@@ -34,7 +34,10 @@ gem 'formtastic'
 
 # To use debugger
 gem 'ruby-debug19', :require => 'ruby-debug'
-gem 'active_reload'
+
+group :development do
+    gem 'rails-dev-boost', :git => 'git://github.com/thedarkone/rails-dev-boost.git', :require => 'rails_development_boost'
+end
 
 group :test do
   # Pretty printed test output

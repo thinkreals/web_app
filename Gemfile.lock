@@ -1,3 +1,9 @@
+GIT
+  remote: git://github.com/thedarkone/rails-dev-boost.git
+  revision: 216de40f33fe794e19c492c283d69d4911cab741
+  specs:
+    rails-dev-boost (0.1.1)
+
 GEM
   remote: http://rubygems.org/
   specs:
@@ -15,7 +21,6 @@ GEM
       rack-mount (~> 0.8.2)
       rack-test (~> 0.6.1)
       sprockets (~> 2.0.0)
-    active_reload (0.6.0)
     activeadmin (0.3.2)
       devise (>= 1.1.2)
       fastercsv
@@ -161,7 +166,6 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  active_reload
   activeadmin
   coffee-rails (~> 3.1.0)
   devise
@@ -172,6 +176,7 @@ DEPENDENCIES
   memcache-client
   mysql2
   rails (= 3.1.0)
+  rails-dev-boost!
   ruby-debug19
   sass-rails (~> 3.1.0)
   turn
