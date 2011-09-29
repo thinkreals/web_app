@@ -13,10 +13,10 @@ class UserSetting < ActiveRecord::Base
        ret = {
          id: id, 
          user_id: user_id,
-         post_sns_withs: post_sns_withs,
-         post_sns_whens: post_sns_whens,
-         email_me_whens: email_me_whens,
-         phone_push_me_whens: phone_push_me_whens,
+         do_not_post_sns_withs: do_not_post_sns_withs,
+         do_not_post_sns_whens: do_not_post_sns_whens,
+         do_not_email_me_whens: do_not_email_me_whens,
+         do_not_phone_push_me_whens: do_not_phone_push_me_whens,
          email_agreed_at: string_email_agreed_at,
          term_agreed_at: string_term_agreed_at,
          created_at: created_at.to_s(:normal_datetime),
@@ -37,20 +37,20 @@ class UserSetting < ActiveRecord::Base
   end  
   
   
-  def post_sns_withs
-    post_sns_with ? post_sns_with.split(",") : []
+  def do_not_post_sns_withs
+    do_not_post_sns_with ? do_not_post_sns_with.split(",") : []
   end
 
-  def post_sns_whens
-    post_sns_when ? post_sns_when.split(",") : []
+  def do_not_post_sns_whens
+    do_not_post_sns_when ? do_not_post_sns_when.split(",") : []
   end
 
-  def email_me_whens
-    email_me_when ? email_me_when.split(",") : []
+  def do_not_email_me_whens
+    do_not_email_me_when ? do_not_email_me_when.split(",") : []
   end
 
-  def phone_push_me_whens
-    phone_push_me_when ? phone_push_me_when.split(",") : []
+  def do_not_phone_push_me_whens
+    do_not_phone_push_me_when ? do_not_phone_push_me_when.split(",") : []
   end
     
 end

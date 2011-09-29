@@ -6,5 +6,5 @@ rails g active_admin:resource property
 
 rails g scaffold feedback feedback_type:string user_id:integer email:string content:string
 rails g active_admin:resource feedback 
-rails g scaffold user_settings user_id:integer post_sns_with:string post_sns_when:string email_me_when:string phone_push_me_when:string email_agreed_at:datetime term_agreed_at:datetime 
+rails g scaffold user_settings user_id:integer do_not_do_not_post_sns_with:string do_not_post_sns_when:string do_not_email_me_when:string do_not_do_not_phone_push_me_when:string email_agreed_at:datetime term_agreed_at:datetime 
 
