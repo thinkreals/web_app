@@ -1,2 +1,3 @@
-class UserSettingsController < InheritedResources::Base
+class UserSettingsController < ResourcesController
+  belongs_to :user                                     
 end

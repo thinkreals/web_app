@@ -19,7 +19,7 @@ class ApplicationController < ActionController::Base
     }
   end                  
   
-  def render_collection_json(collection, hash = {})
+  def render_collection_json(collection, hash = {})   
     name = collection.klass.name.pluralize.underscore
     hash[:current_user] = current_user
     

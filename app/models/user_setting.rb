@@ -38,19 +38,23 @@ class UserSetting < ActiveRecord::Base
   
   
   def do_not_post_sns_withs
-    do_not_post_sns_with ? do_not_post_sns_with.split(",") : []
+    do_not_post_sns_with ? do_not_post_sns_with.split(",").map{|s| s.strip } : []
   end
 
   def do_not_post_sns_whens
-    do_not_post_sns_when ? do_not_post_sns_when.split(",") : []
+    do_not_post_sns_when ? do_not_post_sns_when.split(",").map{|s| s.strip } : []
   end
 
   def do_not_email_me_whens
-    do_not_email_me_when ? do_not_email_me_when.split(",") : []
+    do_not_email_me_when ? do_not_email_me_when.split(",").map{|s| s.strip } : []
   end
 
   def do_not_phone_push_me_whens
-    do_not_phone_push_me_when ? do_not_phone_push_me_when.split(",") : []
+    do_not_phone_push_me_when ? do_not_phone_push_me_when.split(",").map{|s| s.strip } : []
+  end  
+  
+  def split_and_strip(string)
+    
   end
     
 end

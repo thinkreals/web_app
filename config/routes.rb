@@ -1,7 +1,5 @@
 WebApp::Application.routes.draw do
 
-  resources :user_settings
-
   ActiveAdmin.routes(self)
 
   devise_for :admin_users, ActiveAdmin::Devise.config
@@ -20,11 +18,12 @@ WebApp::Application.routes.draw do
 
   # Sample resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products 
-  resources :users do
+  resources :users, shallow: true do
     member do
       get 'password'
       put 'password'
-    end
+    end 
+    resources :user_settings
   end
   resources :properties
   resources :feedbacks

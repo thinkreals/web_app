@@ -17,10 +17,10 @@
 <% @user_settings.each do |user_setting| %>
   <tr>
     <td><%= user_setting.user_id %></td>
-    <td><%= user_setting.do_not_do_not_post_sns_with %></td>
+    <td><%= user_setting.do_not_post_sns_with %></td>
     <td><%= user_setting.do_not_post_sns_when %></td>
     <td><%= user_setting.do_not_email_me_when %></td>
-    <td><%= user_setting.do_not_do_not_phone_push_me_when %></td>
+    <td><%= user_setting.do_not_phone_push_me_when %></td>
     <td><%= user_setting.email_agreed_at %></td>
     <td><%= user_setting.term_agreed_at %></td>
     <td><%= link_to 'Show', user_setting %></td>
