@@ -5,5 +5,6 @@ rails g active_admin:install
 rails g active_admin:resource property
 
 rails g scaffold feedback feedback_type:string user_id:integer email:string content:string
-rails g active_admin:resource feedback
+rails g active_admin:resource feedback 
+rails g scaffold user_settings user_id:integer post_sns_with:string post_sns_when:string email_me_when:string phone_push_me_when:string email_agreed_at:datetime term_agreed_at:datetime 
 

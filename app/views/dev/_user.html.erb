@@ -24,7 +24,7 @@
 	<%= render partial: 'post', 
 		locals: {
 			url: "/users.json",
-			data: { 'user[email]' => 'user@web_app.com', 'user[password]' => '12345678', 'user[password_confirmation]' => '12345678', 'user[nickname]' => 'user' },
+			data: { 'user[email]' => 'user@web_app.com', 'user[password]' => '12345678', 'user[password_confirmation]' => '12345678', 'user[nickname]' => 'user', 'user[user_setting_attributes][term_agree]' => 'true', 'user[user_setting_attributes][email_agree]' => 'false' },
 			file: {},
 			note: "join"
 		}          

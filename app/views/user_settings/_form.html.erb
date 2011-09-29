@@ -1,0 +1,45 @@
+<%= form_for(@user_setting) do |f| %>
+  <% if @user_setting.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@user_setting.errors.count, "error") %> prohibited this user_setting from being saved:</h2>
+
+      <ul>
+      <% @user_setting.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :user_id %><br />
+    <%= f.number_field :user_id %>
+  </div>
+  <div class="field">
+    <%= f.label :post_sns_with %><br />
+    <%= f.text_field :post_sns_with %>
+  </div>
+  <div class="field">
+    <%= f.label :post_sns_when %><br />
+    <%= f.text_field :post_sns_when %>
+  </div>
+  <div class="field">
+    <%= f.label :email_me_when %><br />
+    <%= f.text_field :email_me_when %>
+  </div>
+  <div class="field">
+    <%= f.label :phone_push_me_when %><br />
+    <%= f.text_field :phone_push_me_when %>
+  </div>
+  <div class="field">
+    <%= f.label :email_agreed_at %><br />
+    <%= f.datetime_select :email_agreed_at %>
+  </div>
+  <div class="field">
+    <%= f.label :term_agreed_at %><br />
+    <%= f.datetime_select :term_agreed_at %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

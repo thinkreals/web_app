@@ -1,5 +1,7 @@
 WebApp::Application.routes.draw do
 
+  resources :user_settings
+
   ActiveAdmin.routes(self)
 
   devise_for :admin_users, ActiveAdmin::Devise.config

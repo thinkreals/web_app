@@ -1,6 +1,6 @@
 class Property < ActiveRecord::Base
 
-  def readable_object(version, hash = nil)
+  def readable_object(version, current_user, includes = [])
     ret = {}
     
     case version.to_i

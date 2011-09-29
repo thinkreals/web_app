@@ -5,7 +5,7 @@ class User::RegistrationsController < Devise::RegistrationsController
        format.json { 
          build_resource
          if resource.save
-           render_success_json('Successfully signed up.')
+           render_resource_json resource, :include => [:user_setting], :message => 'Successfully signed up.'
          else
            render_fail_json(resource.errors.messages)
          end

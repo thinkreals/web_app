@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>User:</b>
+  <%= @user_setting.user_id %>
+</p>
+
+<p>
+  <b>Post sns with:</b>
+  <%= @user_setting.post_sns_with %>
+</p>
+
+<p>
+  <b>Post sns when:</b>
+  <%= @user_setting.post_sns_when %>
+</p>
+
+<p>
+  <b>Email me when:</b>
+  <%= @user_setting.email_me_when %>
+</p>
+
+<p>
+  <b>Phone push me when:</b>
+  <%= @user_setting.phone_push_me_when %>
+</p>
+
+<p>
+  <b>Email agreed at:</b>
+  <%= @user_setting.email_agreed_at %>
+</p>
+
+<p>
+  <b>Term agreed at:</b>
+  <%= @user_setting.term_agreed_at %>
+</p>
+
+
+<%= link_to 'Edit', edit_user_setting_path(@user_setting) %> |
+<%= link_to 'Back', user_settings_path %>

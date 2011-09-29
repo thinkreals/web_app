@@ -1,4 +1,7 @@
-class User < ActiveRecord::Base
+class User < ActiveRecord::Base                                                         
+  has_one :user_setting
+  accepts_nested_attributes_for :user_setting
+  
   # Include default devise modules. Others available are:
   # :token_authenticatable, :encryptable, :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
@@ -9,7 +12,7 @@ class User < ActiveRecord::Base
   # attr_accessible :email, :password, :password_confirmation, :remember_me
   attr_protected :id, :encrypted_password,:reset_password_token, :reset_password_sent_at, :remember_created_at, :sign_in_count, :current_sign_in_at, :last_sign_in_at, :current_sign_in_ip, :last_sign_in_ip, :password_salt, :authentication_token, :created_at, :updated_at       
   
-  def readable_object(version, hash = nil)
+  def readable_object(version, current_user, includes = [])
     ret = {}
 
     case version.to_i
@@ -22,6 +25,12 @@ class User < ActiveRecord::Base
          created_at: created_at.to_s(:normal_datetime),
          updated_at: updated_at.to_s(:normal_datetime)
        }
+       if includes.include?(:user_setting)
+         ret[:user_setting] = nil
+         if user_setting
+           ret[:user_setting] = user_setting.readable_object(version, current_user) 
+         end
+       end
     end
 
     ret
