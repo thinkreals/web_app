@@ -1,6 +1,7 @@
 common: &common
   admin_email: 'contact@webapp.com'
   email_sender: 'contact@webapp.com'
+  mail_host: 'selfmail.thinkreals.com'
   secret_key: 'secret_key'
   twitter_consumer_key: '15odGgsghpeYAUa2KPcxSw'
   twitter_consumer_secret: 'VcRwJB2hC61PyiLcmHgTlLsdQU0bHq2NIMCptWMWHo'
