@@ -26,6 +26,7 @@ gem 'inherited_resources'
 gem 'kaminari'
 gem 'formtastic'
 gem 'cancan'
+gem 'resque', :require => 'resque/server'
 
 # Use unicorn as the web server
 # gem 'unicorn'

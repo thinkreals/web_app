@@ -10,6 +10,10 @@ class Ability
       can [:manage], User do |u|
         user.id == u.id
       end
+      if user.admin?
+        can :manage, :all
+        #can :manage, Resque
+      end
     end
     # Define abilities for the passed in user here. For example:
     #

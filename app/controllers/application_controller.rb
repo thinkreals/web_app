@@ -33,8 +33,18 @@ class ApplicationController < ActionController::Base
     }
     
   end
-  
-  def render_success_json(msg = nil)
+
+  def authenticate_admin_user!
+    render_403 and return if user_signed_in? && !current_user.admin?
+    authenticate_user!
+  end
+
+  def current_admin_user
+    return nil if user_signed_in? && !current_user.admin?
+    current_user
+  end
+
+def render_success_json(msg = nil)
     render json: {
       status_code: 'success',
       message: msg || 'Success.'
