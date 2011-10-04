@@ -1,7 +1,5 @@
 WebApp::Application.routes.draw do
 
-  ActiveAdmin.routes(self)
-
   devise_for :users, :controllers => { :sessions => "user/sessions", :registrations => "user/registrations" } 
 
   # The priority is based upon order of creation:
@@ -64,13 +62,14 @@ WebApp::Application.routes.draw do
   # just remember to delete public/index.html.
   root :to => 'welcome#index'
 
+  match '/admin' => 'admin/dashboard#index'
   namespace :admin do
+    resources :properties
+    resources :users
     constraints CanAccessResque do
       mount Resque::Server, at: 'resque'
     end
   end
-
-
 
   # See how all your routes lay out with "rake routes"
 
