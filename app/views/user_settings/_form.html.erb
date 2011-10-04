@@ -1,4 +1,28 @@
-<%= form_for(@user_setting) do |f| %>
+<% content_for :head do %>
+<script type="text/javascript">
+$(document).ready(function() {
+	$('form').submit(function(){
+		addBlankIfAllUnchecked('user_setting[post_sns_with][]', 'post-sns-with-check');
+		addBlankIfAllUnchecked('user_setting[post_sns_when][]', 'post-sns-when-check');
+		addBlankIfAllUnchecked('user_setting[email_me_when][]', 'email-me-when-check');
+		addBlankIfAllUnchecked('user_setting[phone_push_when][]', 'phone-push-when-check');
+		addBlankIfAllUnchecked('user_setting[email_agree]', 'email-agree-check');
+	});
+});   
+
+function addBlankIfAllUnchecked(name, checkboxClassName){
+	var checkedCnt = $('.' + checkboxClassName + ':checked').length;
+	if (checkedCnt == 0) {       
+		var input = $("<input>").attr("type", "hidden").attr("name", name).val("");
+		$('form').append($(input));
+	};
+}                                            
+
+</script>
+<% end %>
+
+
+<%= form_for(@user_setting, url: "/users/#{@user.id}/user_setting") do |f| %>
   <% if @user_setting.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@user_setting.errors.count, "error") %> prohibited this user_setting from being saved:</h2>
@@ -11,34 +35,45 @@
     </div>
   <% end %>
 
+
   <div class="field">
-    <%= f.label :user_id %><br />
-    <%= f.number_field :user_id %>
-  </div>
+    <%= label_tag 'Post sns with:' %><br />       
+		<% UserSetting::SNS_TYPES.each do |k, v| %>        
+			<%= check_box_tag("user_setting[post_sns_with][]", k, @user_setting.post_sns_with.include?(k), :class => 'post-sns-with-check') %>           
+			<%= label_tag v %><br />     
+		<% end %>
+  </div> 
+
   <div class="field">
-    <%= f.label :do_not_post_sns_with %><br />
-    <%= f.text_field :do_not_post_sns_with %>
+    <%= label_tag 'Post sns when:' %><br />       
+		<% UserSetting::POST_SNS_TYPES.each do |k, v| %>        
+			<%= check_box_tag("user_setting[post_sns_when][]", k, @user_setting.post_sns_when.include?(k), :class => 'post-sns-when-check') %>           
+			<%= label_tag v %><br />     
+		<% end %>
   </div>
+
   <div class="field">
-    <%= f.label :do_not_post_sns_when %><br />
-    <%= f.text_field :do_not_post_sns_when %>
+    <%= label_tag 'Email me when:' %><br />       
+		<% UserSetting::EMAIL_ME_TYPES.each do |k, v| %>        
+			<%= check_box_tag("user_setting[email_me_when][]", k, @user_setting.email_me_when.include?(k), :class => 'email-me-when-check') %>           
+			<%= label_tag v %><br />     
+		<% end %>
   </div>
+
   <div class="field">
-    <%= f.label :do_not_email_me_when %><br />
-    <%= f.text_field :do_not_email_me_when %>
+    <%= label_tag 'Phone push when:' %><br />       
+		<% UserSetting::PHONE_PUSH_TYPES.each do |k, v| %>        
+			<%= check_box_tag("user_setting[phone_push_when][]", k, @user_setting.phone_push_when.include?(k), :class => 'phone-push-when-check') %>           
+			<%= label_tag v %><br />     
+		<% end %>
   </div>
+
+
   <div class="field">
-    <%= f.label :do_not_phone_push_me_when %><br />
-    <%= f.text_field :do_not_phone_push_me_when %>
+    <%= label_tag :email_agree %><br />                                                                                    
+		<%= check_box_tag("user_setting[email_agree]", true, !@user_setting.email_agreed_at.nil?, :class => 'email-agree-check') %>
   </div>
-  <div class="field">
-    <%= f.label :email_agreed_at %><br />
-    <%= f.datetime_select :email_agreed_at %>
-  </div>
-  <div class="field">
-    <%= f.label :term_agreed_at %><br />
-    <%= f.datetime_select :term_agreed_at %>
-  </div>
+
   <div class="actions">
     <%= f.submit %>
   </div>

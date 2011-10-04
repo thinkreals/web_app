@@ -5,7 +5,7 @@ one:
   do_not_post_sns_with: MyString
   do_not_post_sns_when: MyString
   do_not_email_me_when: MyString
-  do_not_phone_push_me_when: MyString
+  do_not_phone_push_when: MyString
   email_agreed_at: 2011-09-29 13:30:29
   term_agreed_at: 2011-09-29 13:30:29
 
@@ -14,6 +14,6 @@ two:
   do_not_post_sns_with: MyString
   do_not_post_sns_when: MyString
   do_not_email_me_when: MyString
-  do_not_phone_push_me_when: MyString
+  do_not_phone_push_when: MyString
   email_agreed_at: 2011-09-29 13:30:29
   term_agreed_at: 2011-09-29 13:30:29

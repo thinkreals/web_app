@@ -23,7 +23,7 @@ WebApp::Application.routes.draw do
       put 'password'
     end 
     resource :user_setting
-  end                       
+  end                     
   resources :properties
   resources :feedbacks
 
