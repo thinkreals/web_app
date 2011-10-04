@@ -6,9 +6,6 @@ gem 'rails', '3.1.0'
 # gem 'rails',     :git => 'git://github.com/rails/rails.git'
 
 gem 'mysql2'
-
-gem 'activeadmin'
-
 gem 'memcache-client'
 
 # Gems used only for assets and not required
@@ -27,6 +24,7 @@ gem 'kaminari'
 gem 'formtastic'
 gem 'cancan'
 gem 'resque', :require => 'resque/server'
+gem "meta_search", :git => "https://github.com/thinkreals/meta_search.git"
 
 # Use unicorn as the web server
 # gem 'unicorn'
@@ -38,7 +36,8 @@ gem 'resque', :require => 'resque/server'
 gem 'ruby-debug19', :require => 'ruby-debug'
 
 group :development do
-    gem 'rails-dev-boost', :git => 'git://github.com/thedarkone/rails-dev-boost.git', :require => 'rails_development_boost'
+  gem 'web-app-theme', '~> 0.8.0'
+  gem 'rails-dev-boost', :git => 'git://github.com/thedarkone/rails-dev-boost.git', :require => 'rails_development_boost'
 end
 
 group :test do
