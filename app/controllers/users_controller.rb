@@ -1,10 +1,10 @@
-class UsersController < ResourcesController 
+class UsersController < InheritedResources::Base
   load_and_authorize_resource 
-  
-  def index
+
+  def index  
     index! do |format|
       format.html
-      format.json { render_collection_json collection }
+      format.json { render_collection_json collection, :include => [] }
     end
   end
 
@@ -14,9 +14,7 @@ class UsersController < ResourcesController
       format.json { render_resource_json resource, :include => [:user_setting] }
     end
   end
-  
-  
-  
+
   # user 의 경우 디바이스 때문에 json response 를 통제하기가 넘 어려워서 그냥 이렇게 씀... 좋은 방법 없을까?!..
   def update  
     respond_to do |format|
@@ -27,10 +25,10 @@ class UsersController < ResourcesController
         format.html { render action: 'edit' }    
         format.json { render_fail_json resource.errors.messages }
       end
-      
+
     end
   end 
-  
+
   def password 
     respond_to do |format|
       if request.get? 
@@ -45,7 +43,12 @@ class UsersController < ResourcesController
           format.json { render_fail_json resource.errors.messages }                                                       
         end  
       end
-      
+
     end
   end 
+
+  protected
+  def collection
+    @examples ||= end_of_association_chain.page(params[:page]).per(params[:per_page])
+  end
 end

@@ -22,8 +22,8 @@ WebApp::Application.routes.draw do
       get 'password'
       put 'password'
     end 
-    resources :user_settings
-  end
+    resource :user_setting
+  end                       
   resources :properties
   resources :feedbacks
 

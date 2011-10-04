@@ -1,2 +1,2 @@
-class PropertiesController < ResourcesController
+class PropertiesController < InheritedResources::Base
 end
