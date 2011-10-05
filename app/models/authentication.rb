@@ -12,28 +12,5 @@ class Authentication < ActiveRecord::Base
   scope :facebook, where(provider: 'facebook')        
 
 
-  def post_twitter(msg)  
-    Twitter.configure do |config|
-      config.consumer_key = CONFIG['twitter_consumer_key']
-      config.consumer_secret = CONFIG['twitter_consumer_secret']
-      config.oauth_token = token
-      config.oauth_token_secret = secret
-    end
-
-    begin
-      Twitter.update(msg)
-    rescue Exception => e
-      puts "fail."
-      puts e.message
-      pp e.backtrace
-    else
-      puts "Done."
-    end
-  end                  
-
-  def post_facebook(msg)  
-    graph = Koala::Facebook::API.new(token)
-    graph.put_wall_post(msg)
-  end 
-
+  
 end
