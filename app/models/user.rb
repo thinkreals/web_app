@@ -1,3 +1,5 @@
+# coding: utf-8
+
 class User < ActiveRecord::Base                                                         
   has_one :user_setting
   accepts_nested_attributes_for :user_setting
@@ -10,7 +12,9 @@ class User < ActiveRecord::Base
 
   # Setup accessible (or protected) attributes for your model
   # attr_accessible :email, :password, :password_confirmation, :remember_me
-  attr_protected :id, :encrypted_password,:reset_password_token, :reset_password_sent_at, :remember_created_at, :sign_in_count, :current_sign_in_at, :last_sign_in_at, :current_sign_in_ip, :last_sign_in_ip, :password_salt, :authentication_token, :created_at, :updated_at       
+  attr_protected :id, :encrypted_password,:reset_password_token, :reset_password_sent_at, :remember_created_at, :sign_in_count, :current_sign_in_at, :last_sign_in_at, :current_sign_in_ip, :last_sign_in_ip, :password_salt, :authentication_token, :created_at, :updated_at     
+  
+  validates_format_of :email, :with =>  /^([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})$/i, :message => "은 형식이 올바르지 않습니다."  
 
   def admin?
     (self.id == 1) ? true : false

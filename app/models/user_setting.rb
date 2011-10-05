@@ -17,9 +17,6 @@ class UserSetting < ActiveRecord::Base
 
     case version.to_i 
     when 1     
-      string_email_agreed_at = email_agreed_at ? email_agreed_at.to_s(:normal_datetime) : nil
-      string_term_agreed_at = term_agreed_at ? term_agreed_at.to_s(:normal_datetime) : nil
-      
        ret = {
          id: id, 
          user_id: user_id,
@@ -27,8 +24,8 @@ class UserSetting < ActiveRecord::Base
          post_sns_when:    post_sns_when,
          email_me_when:    email_me_when,
          phone_push_when:  phone_push_when,
-         email_agreed_at: string_email_agreed_at,
-         term_agreed_at:  string_term_agreed_at,
+         email_agree: email_agree,
+         term_agree:  term_agree,
          created_at: created_at.to_s(:normal_datetime),
          updated_at: updated_at.to_s(:normal_datetime)
        }
