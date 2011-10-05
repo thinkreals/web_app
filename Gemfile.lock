@@ -96,6 +96,9 @@ GEM
     kaminari (0.12.4)
       rails (>= 3.0.0)
     kgio (2.6.0)
+    koala (1.2.1)
+      faraday (~> 0.7.0)
+      multi_json (~> 1.0)
     linecache19 (0.5.12)
       ruby_core_source (>= 0.1.4)
     log4r (1.1.9)
@@ -280,6 +283,7 @@ DEPENDENCIES
   formtastic
   jquery-rails
   kaminari
+  koala
   memcache-client
   meta_search!
   mysql2

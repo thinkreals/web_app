@@ -20,6 +20,7 @@ gem 'resque', :require => 'resque/server'
 gem "meta_search", :git => "https://github.com/thinkreals/meta_search.git"
 gem 'omniauth'  
 gem 'twitter'
+gem 'koala'
 
 gem 'unicorn'
 gem 'capistrano'
