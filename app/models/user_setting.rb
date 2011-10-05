@@ -37,7 +37,13 @@ class UserSetting < ActiveRecord::Base
     ret
   end                               
   
-  
+         
+  def term_agree
+    term_agreed_at ? true : false
+  end
+  def email_agree
+    email_agreed_at ? true : false
+  end
   def term_agree=(agree)  
     if agree == true or agree == 'true'
       self.term_agreed_at = Time.zone.now

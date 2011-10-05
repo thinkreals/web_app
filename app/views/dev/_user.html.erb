@@ -82,5 +82,14 @@
 			file: {},
 			note: "edit user_setting. do_not_XXX 에 대해서는 ,(콤마)로 구분한다. all을 쓸수 있다."
 		}          
+	%>    
+	
+	<%= render partial: 'get',
+		locals: {
+			url: "/users/email_check.json",
+			data: { 'email' => 'blah@example.com' },
+			page: false,
+			note: "이메일 중복검사"
+		}
 	%>
 </table>

@@ -13,7 +13,6 @@ end
 
 gem 'jquery-rails'
 gem 'devise'
-gem 'inherited_resources'
 gem 'kaminari'
 gem 'formtastic'
 gem 'cancan'

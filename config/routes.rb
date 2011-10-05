@@ -16,6 +16,9 @@ WebApp::Application.routes.draw do
   # Sample resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products 
   resources :users, shallow: true do
+    collection do
+      get 'email_check'
+    end
     member do
       get 'password'
       put 'password'
