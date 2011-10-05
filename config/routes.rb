@@ -1,5 +1,4 @@
 WebApp::Application.routes.draw do
-
   devise_for :users, :controllers => { :sessions => "user/sessions", :registrations => "user/registrations" } 
 
   # The priority is based upon order of creation:
@@ -26,7 +25,8 @@ WebApp::Application.routes.draw do
     resource :user_setting
   end                     
   resources :properties
-  resources :feedbacks
+  resources :feedbacks 
+  resources :authentications      
 
   # Sample resource route with options:
   #   resources :products do
@@ -78,6 +78,7 @@ WebApp::Application.routes.draw do
 
   # This is a legacy wild controller route that's not recommended for RESTful applications.
   # Note: This route will make all actions in every controller accessible via GET requests.
-  # match ':controller(/:action(/:id(.:format)))' 
+  # match ':controller(/:action(/:id(.:format)))'
+  match '/auth/:provider/callback' => 'authentications#create'   
   match 'dev' => 'dev#index', :via => [:get]
 end

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110929043029) do
+ActiveRecord::Schema.define(:version => 20111005053014) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.integer  "resource_id",   :null => false
@@ -46,6 +46,21 @@ ActiveRecord::Schema.define(:version => 20110929043029) do
   add_index "admin_users", ["email"], :name => "index_admin_users_on_email", :unique => true
   add_index "admin_users", ["reset_password_token"], :name => "index_admin_users_on_reset_password_token", :unique => true
 
+  create_table "authentications", :force => true do |t|
+    t.integer  "user_id"
+    t.string   "provider"
+    t.string   "uid"
+    t.string   "email"
+    t.string   "image_url"
+    t.string   "name"
+    t.string   "nickname"
+    t.string   "secret"
+    t.string   "token"
+    t.string   "url"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "feedbacks", :force => true do |t|
     t.string   "feedback_type"
     t.integer  "user_id"
@@ -62,6 +77,19 @@ ActiveRecord::Schema.define(:version => 20110929043029) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "rails_admin_histories", :force => true do |t|
+    t.text     "message"
+    t.string   "username"
+    t.integer  "item"
+    t.string   "table"
+    t.integer  "month",      :limit => 2
+    t.integer  "year",       :limit => 8
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "rails_admin_histories", ["item", "table", "month", "year"], :name => "index_rails_admin_histories"
 
   create_table "user_settings", :force => true do |t|
     t.integer  "user_id"

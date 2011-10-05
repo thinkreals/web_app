@@ -1,0 +1,55 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>User:</b>
+  <%= @authentication.user_id %>
+</p>
+
+<p>
+  <b>Provider:</b>
+  <%= @authentication.provider %>
+</p>
+
+<p>
+  <b>Uid:</b>
+  <%= @authentication.uid %>
+</p>
+
+<p>
+  <b>Email:</b>
+  <%= @authentication.email %>
+</p>
+
+<p>
+  <b>Image url:</b>
+  <%= @authentication.image_url %>
+</p>
+
+<p>
+  <b>Name:</b>
+  <%= @authentication.name %>
+</p>
+
+<p>
+  <b>Nickname:</b>
+  <%= @authentication.nickname %>
+</p>
+
+<p>
+  <b>Secret:</b>
+  <%= @authentication.secret %>
+</p>
+
+<p>
+  <b>Token:</b>
+  <%= @authentication.token %>
+</p>
+
+<p>
+  <b>Url:</b>
+  <%= @authentication.url %>
+</p>
+
+
+<%= link_to 'Edit', edit_authentication_path(@authentication) %> |
+<%= link_to 'Back', authentications_path %>

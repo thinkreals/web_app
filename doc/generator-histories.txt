@@ -3,8 +3,8 @@ rails g scaffold property key:string value:string use_client:boolean
 rails g controller welcome index
 rails g active_admin:install
 rails g active_admin:resource property
-
 rails g scaffold feedback feedback_type:string user_id:integer email:string content:string
 rails g active_admin:resource feedback 
 rails g scaffold user_settings user_id:integer do_not_post_sns_with:string do_not_post_sns_when:string do_not_email_me_when:string do_not_phone_push_when:string email_agreed_at:datetime term_agreed_at:datetime 
+rails g scaffold authentication user_id:integer provider:string uid:string email:string image_url:string name:string nickname:string secret:string token:string url:string                                                                                                                     
 

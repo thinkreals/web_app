@@ -8,6 +8,11 @@ class UsersController < ApplicationController
       format.html
       format.json { render_resource_json @user }
     end
+  end      
+  
+  
+  def edit
+    @user = User.find(params[:id])
   end
 
   def update     

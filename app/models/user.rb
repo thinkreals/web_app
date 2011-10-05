@@ -3,6 +3,7 @@
 class User < ActiveRecord::Base                                                         
   has_one :user_setting
   accepts_nested_attributes_for :user_setting
+  has_many :authentications  
   
   # Include default devise modules. Others available are:
   # :token_authenticatable, :encryptable, :confirmable, :lockable, :timeoutable and :omniauthable
