@@ -31,7 +31,9 @@ class Authentication < ActiveRecord::Base
     end
   end                  
 
-  def post_facebook
+  def post_facebook(msg)  
+    graph = Koala::Facebook::API.new(token)
+    graph.put_wall_post(msg)
+  end 
 
-  end
 end
