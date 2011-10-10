@@ -43,5 +43,10 @@ class User < ActiveRecord::Base
     end
 
     ret
+  end       
+   
+  
+  def get_sns_client(provider)
+    SnsClient::Base.new(self, provider)
   end
 end
