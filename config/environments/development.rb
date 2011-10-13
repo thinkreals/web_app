@@ -15,7 +15,7 @@ WebApp::Application.configure do
 
   # Don't care if the mailer can't send
   config.action_mailer.raise_delivery_errors = false
-
+  
   # Print deprecation notices to the Rails logger
   config.active_support.deprecation = :log
 
@@ -30,8 +30,9 @@ WebApp::Application.configure do
 
   
   config.cache_store = :mem_cache_store, CONFIG['memcached_host']
-
-  config.action_mailer.delivery_method = :smtp
+                           
+  
+  # config.action_mailer.delivery_method = :smtp
   # config.action_mailer.smtp_settings = {
   #   :address              => CONFIG['mail_host'],
   #   :port                 => 25,
