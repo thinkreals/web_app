@@ -32,10 +32,10 @@ WebApp::Application.configure do
   config.cache_store = :mem_cache_store, CONFIG['memcached_host']
 
   config.action_mailer.delivery_method = :smtp
-  config.action_mailer.smtp_settings = {
-    :address              => CONFIG['mail_host'],
-    :port                 => 25,
-    :domain               => CONFIG['mail_host'],
-    :authentication       => 'plain',
-    :enable_starttls_auto => true  }
+  # config.action_mailer.smtp_settings = {
+  #   :address              => CONFIG['mail_host'],
+  #   :port                 => 25,
+  #   :domain               => CONFIG['mail_host'],
+  #   :authentication       => 'plain',
+  #   :enable_starttls_auto => true  }  
 end
