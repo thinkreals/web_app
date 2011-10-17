@@ -19,7 +19,7 @@ class User < ActiveRecord::Base
 
   def admin?
     (self.id == 1) ? true : false
-  end
+  end    
   
   def readable_object(version, current_user, includes = [])
     ret = {}
