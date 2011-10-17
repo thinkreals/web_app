@@ -5,9 +5,9 @@
 	<%= render partial: 'post', 
 		locals: {
 			url: "/users/sign_in.json",
-			data: { 'user[email]' => 'admin@web_app.com', 'user[password]' => '12345678' },
+			data: { 'user[email]' => 'admin@web_app.com', 'user[password]' => '12345678', 'device' => '' },
 			file: {},
-			note: "login"
+			note: "login. device는 ios, android, web 중 하나.(비우면 web이 디폴트.)"
 		}          
 	%>              
 
